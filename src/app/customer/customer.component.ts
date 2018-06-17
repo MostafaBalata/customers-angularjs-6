@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CUSTOMERS } from '../customer.mocked';
 import { Customer } from '../customer';
-
+import { CustomerService } from '../customer.service';
 @Component({
   selector: 'app-customer',
   templateUrl: './customer.component.html',
@@ -9,14 +8,20 @@ import { Customer } from '../customer';
 })
 
 export class CustomerComponent implements OnInit {
-  customers: Customer[] = CUSTOMERS;
+  customers: Customer[];
   selectedCustomer: Customer;
-  constructor() { }
+
+  constructor(private customerService: CustomerService) { }
 
   ngOnInit() {
+    this.getCustomers()
   }
-  
-  onSelect(customer: Customer): void{
+
+  getCustomers(): void {
+    this.customerService.getCustomers().subscribe(customers => this.customers = customers)
+  }
+
+  onSelect(customer: Customer): void {
     this.selectedCustomer = customer;
   }
 }
