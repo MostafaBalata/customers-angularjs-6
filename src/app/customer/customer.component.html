@@ -1,4 +1,3 @@
-<app-customer-details [customer]="selectedCustomer"></app-customer-details>
 <table class="customers table table-bordered table-hover table-sm">
   <thead>
     <tr scope="col">
@@ -20,8 +19,8 @@
         {{customer.birthday}} {{customer.birthday}}
       </td>
       <td>
-        <button class="btn btn-outline-primary btn-sm">Edit</button>
-        <button class="btn btn-outline-success btn-sm" (click)="onSelect(customer)">Show</button>
+        <button routerLink="/detail/{{customer.customerID}}" class=" btn btn-outline-primary btn-sm ">Edit</button>
+        <button class="btn btn-outline-success btn-sm" (click)="onSelect(customer) ">Show</button>
         <button class="btn btn-outline-danger btn-sm">Delete</button>
       </td>
     </tr>

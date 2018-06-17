@@ -12,4 +12,8 @@ export class CustomerService {
   getCustomers(): Observable<Customer[]> {
     return of(CUSTOMERS);
   }
+
+  getCustomer(customerID: number): Observable<Customer> {
+    return of(CUSTOMERS.find(customer => customer.customerID === customerID));
+  }
 }
