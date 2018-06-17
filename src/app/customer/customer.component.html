@@ -1,5 +1,29 @@
-<ul class="customers">
-    <li *ngFor="let customer of customers">
-        <span class="badge">{{customer.customerID}}</span> {{customer.name.first}} {{customer.name.last}}
-    </li>
-</ul>
+<app-customer-details [customer]="selectedCustomer"></app-customer-details>
+<table class="customers table table-bordered table-hover table-sm">
+  <thead>
+    <tr scope="col">
+      <th>Customer ID</th>
+      <th>Name</th>
+      <th>Birthday</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customers">
+      <td>
+        {{customer.customerID}}
+      </td>
+      <td>
+        {{customer.name.first}} {{customer.name.last}}
+      </td>
+      <td>
+        {{customer.birthday}} {{customer.birthday}}
+      </td>
+      <td>
+        <button class="btn btn-outline-primary btn-sm">Edit</button>
+        <button class="btn btn-outline-success btn-sm" (click)="onSelect(customer)">Show</button>
+        <button class="btn btn-outline-danger btn-sm">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

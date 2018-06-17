@@ -1,0 +1,12 @@
+Customer:
+<div *ngIf="customer">
+
+  <h2>{{ customer.name.first | uppercase }}</h2>
+  <div><span>id: </span>{{customer.customerID}}</div>
+  <div>
+    <label>name:
+    <input [(ngModel)]="customer.name.first" placeholder="name"/>
+    </label>
+  </div>
+
+</div>

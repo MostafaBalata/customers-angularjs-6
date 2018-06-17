@@ -1,0 +1,8 @@
+@import "variables";
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+.well {
+  background-color: $light-gray;
+  color: $black;
+  padding: $box-inside-space;
+  margin-bottom: $box-spaces;
+}

@@ -1,0 +1,13 @@
+@import "../../_variables";
+.customers {
+  th {
+    font-size: $content-size;
+    text-align: center;
+  }
+  td {
+    font-size: $content-size;
+  }
+  button {
+    margin-right: $space-between-action-buttons;
+  }
+}
