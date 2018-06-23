@@ -21,7 +21,7 @@ export class CustomerDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.geCustomer()
+    this.geCustomer();
   }
 
   geCustomer(): void {
@@ -30,10 +30,10 @@ export class CustomerDetailsComponent implements OnInit {
       this.customerService.getCustomer(id)
       .subscribe(customer => this.customer = customer);
     } else {
-      this.customer = new Customer()
+      this.customer = new Customer();
       this.customer.name = {
-        first: "",
-        last: ""
+        first: '',
+        last: ''
       };
     }
   }

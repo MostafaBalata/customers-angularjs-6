@@ -1,6 +1,6 @@
 export class Customer {
   /**
-   * TODO: 
+   * TODO:
    * 1- Create name class
    * 2- Create gender enum
    */
@@ -8,6 +8,6 @@ export class Customer {
   name: any;
   birthday: string;
   gender: string;
-  lastContact: string
-  customerLifetimeValue: number
+  lastContact: string;
+  customerLifetimeValue: number;
 }

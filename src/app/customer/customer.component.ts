@@ -14,19 +14,19 @@ export class CustomerComponent implements OnInit {
   constructor(private customerService: CustomerService) { }
 
   ngOnInit() {
-    this.getCustomers()
+    this.getCustomers();
   }
 
   getCustomers(): void {
-    this.customerService.getCustomers().subscribe(customers => this.customers = customers)
+    this.customerService.getCustomers().subscribe(customers => this.customers = customers);
   }
 
   deleteCustomer(customer: Customer): void {
-    this.customerService.deleteCustomer(customer).subscribe(() => 
-      this.customers = this.customers.filter((element: Customer) => 
+    this.customerService.deleteCustomer(customer).subscribe(() =>
+      this.customers = this.customers.filter((element: Customer) =>
         element.customerID !== customer.customerID
       )
-    )
+    );
   }
 
   onSelect(customer: Customer): void {

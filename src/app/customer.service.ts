@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Customer } from './customer';
-import { CUSTOMERS } from './customer.mocked'
+import { CUSTOMERS } from './customer.mocked';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 const httpOptions = {
