@@ -26,8 +26,31 @@ export class CustomerDetailsComponent implements OnInit {
 
   geCustomer(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.customerService.getCustomer(id)
+    if (id) {
+      this.customerService.getCustomer(id)
       .subscribe(customer => this.customer = customer);
+    } else {
+      this.customer = new Customer()
+      this.customer.name = {
+        first: "",
+        last: ""
+      };
+    }
+  }
+
+  update(id: Number): void {
+    if (id) {
+      this.customerService.updateCustomer(this.customer)
+        .subscribe(() => this.goBack());
+    } else  {
+       this.customerService.addCustomer(this.customer)
+      .subscribe(() => this.goBack());
+    }
+  }
+
+  add(): void {
+    this.customerService.addCustomer(this.customer)
+      .subscribe(() => this.goBack());
   }
 
   goBack(): void {

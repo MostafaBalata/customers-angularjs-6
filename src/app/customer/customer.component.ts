@@ -21,6 +21,14 @@ export class CustomerComponent implements OnInit {
     this.customerService.getCustomers().subscribe(customers => this.customers = customers)
   }
 
+  deleteCustomer(customer: Customer): void {
+    this.customerService.deleteCustomer(customer).subscribe(() => 
+      this.customers = this.customers.filter((element: Customer) => 
+        element.customerID !== customer.customerID
+      )
+    )
+  }
+
   onSelect(customer: Customer): void {
     this.selectedCustomer = customer;
   }

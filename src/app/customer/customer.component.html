@@ -1,3 +1,4 @@
+<button class="btn btn-success" routerLink="/customer">Add New</button>
 <table class="customers table table-bordered table-hover table-sm">
   <thead>
     <tr scope="col">
@@ -16,12 +17,11 @@
         {{customer.name.first}} {{customer.name.last}}
       </td>
       <td>
-        {{customer.birthday}} {{customer.birthday}}
+        {{customer.birthday}}
       </td>
       <td>
-        <button routerLink="/detail/{{customer.customerID}}" class=" btn btn-outline-primary btn-sm ">Edit</button>
-        <button class="btn btn-outline-success btn-sm" (click)="onSelect(customer) ">Show</button>
-        <button class="btn btn-outline-danger btn-sm">Delete</button>
+        <button routerLink="/customer/{{customer.customerID}}" class=" btn btn-outline-primary btn-sm ">Edit</button>
+        <button (click)="deleteCustomer(customer)" class="btn btn-outline-danger btn-sm">Delete</button>
       </td>
     </tr>
   </tbody>

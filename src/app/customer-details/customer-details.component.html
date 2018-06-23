@@ -2,7 +2,7 @@
   <button class="btn btn-outline-success btn-sm" (click)="goBack()">Back</button>
 </div>
 
-<div *ngIf="customer">
+<div>
   <div class="form-group row">
     <label for="firstName" class="col-sm-2 col-form-label">Name</label>
     <div class="col-sm-5">
@@ -38,14 +38,16 @@
     </div>
   </fieldset>
   <div class="form-group row">
-    <div class="col-sm-2">Customer Life time Value</div>
+    <div class="col-sm-2">
+      <label for="customerLifetimeValue" class="col-sm-2 col-form-label">Customer Life time Value</label>
+    </div>
     <div class="col-sm-10">
       <input id="customerLifetimeValue" class="form-control" [(ngModel)]="customer.customerLifetimeValue" placeholder="Customer Life time Value" />
     </div>
   </div>
   <div class="form-group row">
     <div class="col-sm-10">
-      <button type="submit" class="btn btn-primary">Save</button>
+      <button type="submit" (click)="update(customer.customerID)" class="btn btn-primary">Save</button>
     </div>
   </div>
 </div>
