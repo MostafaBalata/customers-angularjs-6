@@ -2,7 +2,7 @@
 
 Example project about managing cutomers interface, the idea out of it is how to kick start you project by using angular js verion 6
 
-# How to run:
+# How to run
 `yarn start`
 
 # How to test
